@@ -61,7 +61,7 @@ The `javac` command is used to **compile Java source code** into **bytecode**.
 ### 🔧 Syntax:
 ```bash
 javac FileName.java
-
+```
 
 
 ## 🌐 5. Why Java is Platform Independent?
