@@ -231,10 +231,10 @@ public class Car {
 
 ### Note
 
-1️⃣	If no constructor is defined, Java provides a default constructor.
-2️⃣	Constructors can be overloaded (i.e., multiple constructors with different parameters).
-3️⃣	Constructors can call other constructors using this() and super().
-4️⃣	Constructors cannot be inherited but can be called via super() in derived classes.
+1.	If no constructor is defined, Java provides a default constructor.
+2. Constructors can be overloaded (i.e., multiple constructors with different parameters).
+3.	Constructors can call other constructors using this() and super().
+4.	Constructors cannot be inherited but can be called via super() in derived classes.
 
 ---
 
@@ -408,7 +408,7 @@ class Dog extends Animal {
 
 When one constructor calls another constructor in the same class or from parent class.
 
-### Example (Constructor Chaining with this()):
+#### Example (Constructor Chaining with this()):
 
 ```java
 public class Book {
@@ -435,22 +435,22 @@ public class Book {
 }
 ```
 
-## Package
+## 27. Package
 
 What is a Package in Java?
-
 - Package is a way to organize related classes and interfaces into namespaces.
 - It helps avoid name conflicts and makes it easier to manage and maintain large codebases.
 - Think of a package like a folder or directory in your file system where you keep related files.
 
 Why use packages?
+- Group related classes logically.
+- Avoid class name clashes.
+- Control access (using protected or default visibility).
+- Easier to locate and use classes.
 
--- Group related classes logically.
--- Avoid class name clashes.
--- Control access (using protected or default visibility).
--- Easier to locate and use classes.
+---
 
-### Import Statement 
+### ✨ Import Statement 
 The import statement lets you use classes from other packages without typing the full package name every time.
 
 It imports specific classes or entire packages so you can refer to classes just by their simple names.
@@ -474,16 +474,15 @@ public class Test {
     }
 }
 ```
+---
 
-## Fully Qualified Class Name
+### ✨ Fully Qualified Class Name
 
 What is a Fully Qualified Class Name?
-
 The Fully Qualified Class Name (FQCN) is the complete name that includes the package name plus the class name.
 It uniquely identifies a class in the entire Java environment.
 
 Why is it important?
-
 When there are classes with the same name in different packages, the FQCN distinguishes between them.
 You can use the fully qualified name without importing the class.
 It helps avoid ambiguity and name conflicts.
