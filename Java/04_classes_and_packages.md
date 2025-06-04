@@ -202,4 +202,237 @@ public class Example {
 
 ## 26. Constructor
 
-## 27. Package
+A constructor is a special method in Java that is called automatically when an object is created. It is used to initialize the object.
+
+- Constructor name must be same as the class name.
+- It does not have a return type, not even void.
+- It is invoked automatically when an object is created.
+- Used to set default or initial values to object properties.
+
+### Example:
+
+```java
+public class Car {
+    String model;
+
+    // Constructor
+    Car() {
+        model = "Maruti";
+        System.out.println("Constructor called");
+    }
+
+    public static void main(String[] args) {
+        Car c = new Car();  // Constructor is automatically called
+        System.out.println("Model: " + c.model);
+    }
+}
+```
+---
+
+### Note
+
+1️⃣	If no constructor is defined, Java provides a default constructor.
+2️⃣	Constructors can be overloaded (i.e., multiple constructors with different parameters).
+3️⃣	Constructors can call other constructors using this() and super().
+4️⃣	Constructors cannot be inherited but can be called via super() in derived classes.
+
+---
+
+## Constructor Overloading
+
+Defining multiple constructors in the same class with different parameter lists.
+
+### Example:
+
+```java
+public class Student {
+    String name;
+    int age;
+
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println(name + " - " + age);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student("Rani", 22);
+        s1.display(); // Unknown - 0
+        s2.display(); // Rani - 22
+    }
+}
+```
+---
+
+## Constructor Propagation
+
+Constructor propagation occurs when a child class constructor automatically or explicitly calls the constructor of its parent class using super().
+This ensures that the parent class is properly initialized before the child class.
+
+### Example of Constructor Propagation
+```java
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor called");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super();  // explicitly calling parent class constructor
+        System.out.println("Dog constructor called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();  // Constructor propagation starts here
+    }
+}
+// Output:
+// Animal constructor called
+// Dog constructor called
+```
+---
+
+### How It Works:
+
+When Dog d = new Dog(); is executed, the Dog() constructor is called.
+
+Inside Dog(), super(); is invoked (even if not written explicitly, Java calls it by default).
+
+This causes the parent class constructor (Animal()) to execute first.
+
+Once the parent constructor completes, the child constructor continues.
+
+---
+
+### Implicit Constructor Propagation
+
+Even without writing super() explicitly, Java calls it automatically if there's a default constructor in the parent.
+
+```java
+class A {
+    A() {
+        System.out.println("A constructor");
+    }
+}
+
+class B extends A {
+    B() {
+        // super() is automatically inserted by Java
+        System.out.println("B constructor");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+    }
+}
+//Output:
+// A constructor
+// B constructor
+```
+
+---
+
+## this, this(), super(), and Constructor Chaining
+
+### this
+
+* Refers to the current object.
+* Used to resolve variable name conflicts.
+
+```java
+public class Demo {
+    int a;
+
+    Demo(int a) {
+        this.a = a;  // 'this' refers to the instance variable
+    }
+}
+```
+---
+
+### this()
+
+* Calls another constructor in the same class.
+* Must be the first statement in the constructor.
+
+```java
+class Sample {
+    Sample() {
+        this(10);
+        System.out.println("Default constructor");
+    }
+
+    Sample(int x) {
+        System.out.println("Parameterized constructor: " + x);
+    }
+}
+```
+---
+
+### super()
+
+* Calls a constructor from the parent class.
+* Also must be the first statement in the constructor.
+
+```java
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super(); // calls Animal()
+        System.out.println("Dog constructor");
+    }
+}
+```
+---
+
+### Constructor Chaining
+
+When one constructor calls another constructor in the same class or from parent class.
+
+### Example (Constructor Chaining with this()):
+
+```java
+public class Book {
+    String title;
+    int price;
+
+    Book() {
+        this("Java Book", 500); // calls another constructor
+    }
+
+    Book(String t, int p) {
+        title = t;
+        price = p;
+    }
+
+    void show() {
+        System.out.println(title + " - " + price);
+    }
+
+    public static void main(String[] args) {
+        Book b = new Book(); // Constructor chaining in action
+        b.show();
+    }
+}
+```
+
+## Package
