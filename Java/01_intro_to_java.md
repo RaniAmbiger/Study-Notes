@@ -157,28 +157,3 @@ easy
 ```
 
 ---
-
-## 🔢 10. Data Types in Java
-
-Java supports **two types** of data types:
-
-### 🔹 1. Primitive Data Types (8 types)
-
-| Data Type | Size     | Default Value | Description                  |
-|-----------|----------|---------------|------------------------------|
-| byte      | 1 byte   | 0             | Small integer value          |
-| short     | 2 bytes  | 0             | Short integer                |
-| int       | 4 bytes  | 0             | Integer value                |
-| long      | 8 bytes  | 0L            | Long integer value           |
-| float     | 4 bytes  | 0.0f          | Decimal value (single-precision) |
-| double    | 8 bytes  | 0.0d          | Decimal value (double-precision) |
-| char      | 2 bytes  | '\u0000'     | Single character             |
-| boolean   | 1 bit    | false         | true or false                |
-
-> Note: `float` and `double` are used for decimal values; `float` requires `f` or `F` suffix.
-
-### 🔹 2. Non-Primitive Data Types
-- Also known as **reference types**.
-- Examples: `String`, `Arrays`, `Classes`, `Interfaces`, `Objects`.
-
----
