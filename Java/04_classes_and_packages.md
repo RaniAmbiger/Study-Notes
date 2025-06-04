@@ -1,4 +1,4 @@
-## 24. static
+## 24. Static
 
 The `static` keyword in Java is used for memory management. It can be applied to variables, methods, blocks, and nested classes. When a member is declared `static`, it belongs to the **class** rather than instances of the class.
 
@@ -106,7 +106,7 @@ public class Test {
 ---
 
 
-## 25. non-static
+## 25. Non-Static
 
 In Java, the non-static keyword is not explicitly used but refers to members (variables, methods, blocks) that belong to instances of a class (i.e., objects). Each object has its own separate copy of non-static members.
 
@@ -346,7 +346,7 @@ public class Test {
 
 ---
 
-## this, this(), super(), and Constructor Chaining
+## 💥 this, this(), super(), and Constructor Chaining
 
 ### this
 
