@@ -436,3 +436,79 @@ public class Book {
 ```
 
 ## Package
+
+What is a Package in Java?
+
+- Package is a way to organize related classes and interfaces into namespaces.
+- It helps avoid name conflicts and makes it easier to manage and maintain large codebases.
+- Think of a package like a folder or directory in your file system where you keep related files.
+
+Why use packages?
+
+-- Group related classes logically.
+-- Avoid class name clashes.
+-- Control access (using protected or default visibility).
+-- Easier to locate and use classes.
+
+### Import Statement 
+The import statement lets you use classes from other packages without typing the full package name every time.
+
+It imports specific classes or entire packages so you can refer to classes just by their simple names.
+
+### Syntax
+
+```java
+import packageName.className;      // Import a single class
+import packageName.*;              // Import all classes from a package
+```
+### Example
+
+```java
+import java.util.ArrayList;
+
+public class Test {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Hello");
+        System.out.println(list);
+    }
+}
+```
+
+## Fully Qualified Class Name
+
+What is a Fully Qualified Class Name?
+
+The Fully Qualified Class Name (FQCN) is the complete name that includes the package name plus the class name.
+It uniquely identifies a class in the entire Java environment.
+
+Why is it important?
+
+When there are classes with the same name in different packages, the FQCN distinguishes between them.
+You can use the fully qualified name without importing the class.
+It helps avoid ambiguity and name conflicts.
+
+### Syntax
+
+```
+packageName.className
+```
+
+### Example:
+
+```java
+java.util.ArrayList     //ArrayList is the class name
+java.util is the package name
+```
+
+```java
+import java.util.Date;
+import java.sql.Date;
+
+public class Test {
+    public static void main(String[] args) {
+        Date utilDate = new java.util.Date();   // fully qualified
+        Date sqlDate = new java.sql.Date(System.currentTimeMillis());  // fully qualified
+    }
+}
+```
