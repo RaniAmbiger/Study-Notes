@@ -348,7 +348,7 @@ public class Test {
 
 ## 💥 this, this(), super(), and Constructor Chaining
 
-### this
+### * this
 
 * Refers to the current object.
 * Used to resolve variable name conflicts.
@@ -364,7 +364,7 @@ public class Demo {
 ```
 ---
 
-### this()
+### * this()
 
 * Calls another constructor in the same class.
 * Must be the first statement in the constructor.
@@ -383,7 +383,7 @@ class Sample {
 ```
 ---
 
-### super()
+### * super()
 
 * Calls a constructor from the parent class.
 * Also must be the first statement in the constructor.
@@ -404,7 +404,7 @@ class Dog extends Animal {
 ```
 ---
 
-### Constructor Chaining
+### * Constructor Chaining
 
 When one constructor calls another constructor in the same class or from parent class.
 
