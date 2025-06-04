@@ -6,7 +6,9 @@ The `static` keyword in Java is used for memory management. It can be applied to
 
 ## 1. Static Variables
 
-A static variable is shared among all instances of a class.
+- Declared using the static keyword.
+- Only one copy exists for all instances.
+- Useful for constants or counters..
 
 ### Exapmle
 
@@ -28,7 +30,10 @@ class Example {
 
 ## 2. Static Methods
 
-Static methods belong to the class rather than any object of the class. They can be called without creating an object.
+- Static methods belong to the class rather than any object of the class.
+- Can be called without creating an object.
+- Can only access static members directly.
+- Cannot use this keyword.
 
 ### Exapmle
 
@@ -51,7 +56,8 @@ Rules:
 
 ## 3. Static Blocks
 
-Used to initialize static data. Executes only once when the class is loaded.
+- Used to initialize static data. 
+- Executes only once when the class is loaded.
 
 ```java
 class Example {
@@ -101,6 +107,98 @@ public class Test {
 
 
 ## 25. non-static
+
+In Java, the non-static keyword is not explicitly used but refers to members (variables, methods, blocks) that belong to instances of a class (i.e., objects). Each object has its own separate copy of non-static members.
+
+---
+
+## 1. Non-Static Variables
+
+- Declared without the static keyword.
+- Each object of the class has its own copy.
+- Cannot be accessed directly from a static context (like main() method) without creating an object.
+
+### Example:
+```java
+public class Person {
+    String name;  // non-static variable
+
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        Person p2 = new Person();
+
+        p1.name = "Rani";
+        p2.name = "Asha";
+
+        System.out.println(p1.name); // Rani
+        System.out.println(p2.name); // Asha
+    }
+}
+```
+
+---
+
+## 2. Non-Static Methods
+
+- Do not have the static keyword.
+- Can access non-static variables directly.
+- Must be called using an object of the class.
+
+### Example:
+
+```java
+public class Calculator {
+    int number;  // non-static variable
+
+    // non-static method
+    void setNumber(int n) {
+        number = n;
+    }
+
+    void display() {
+        System.out.println("Number is: " + number);
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.setNumber(10);
+        calc.display(); // Number is: 10
+    }
+}
+```
+
+---
+
+## 3. Non-Static Block
+
+- A block without static keyword.
+- Runs each time an object is created.
+- Used for instance-level initialization.
+
+### Example:
+
+```java
+public class Example {
+    // non-static block
+    {
+        System.out.println("This is a non-static block.");
+    }
+
+    Example() {
+        System.out.println("Constructor called.");
+    }
+
+    public static void main(String[] args) {
+        Example obj1 = new Example();
+        Example obj2 = new Example();
+    }
+}
+//Output:
+// This is a non-static block.
+// Constructor called.
+// This is a non-static block.
+// Constructor called.
+```
 
 ## 26. Constructor
 
