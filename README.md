@@ -1,2 +1,2 @@
 # Study-Notes
-Notes on Java,Python,C,C++,Web Development,SQL,etc
+Notes on Java,Web Development,SQL,J2ee etc
